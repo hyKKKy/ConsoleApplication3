@@ -10,23 +10,33 @@ private:
 	double result;
 	char user_operator;
 public:
+	Fraction() {
+		numerator = NULL;
+		numerator1 = NULL;
+		denominator = 1;
+		denominator1 = 1;
+		result = NULL;
+		user_operator = ' ';
+	}
 	void SetNumerator(int value) {
 		numerator = value;
 	}
 	void SetDenominator(int value) {
 		if(value == 0){
-			std::cout<<"Denominator can't be 0" << std::endl;
+			std::cout << "Denominator can't be 0 \nUsing a default value 1 as a denominator" << std::endl;
+			return;
 		}
 		else{
 			denominator = value;
 		}
 	}
-	void SetNumerator1(int value) {
+	void SetNumerator1(double value) {
 		numerator1 = value;
 	}
-	void SetDenominator2(int value) {
+	void SetDenominator2(double value) {
 		if(value == 0){
-			std::cout<<"Denominator can't be 0" << std::endl;
+			std::cout << "Denominator can't be 0 \n Using a default value 1 as a denominator" << std::endl;
+			return;
 		}
 		else{
 			denominator1 = value;
@@ -43,15 +53,15 @@ public:
 	}
 	void SumFraction() {
 		double common_denominator = denominator * denominator1;
-		int new_numerator1 = numerator * denominator1;
-		int new_numerator2 = numerator1 * denominator;
+		double new_numerator1 = numerator * denominator1;
+		double new_numerator2 = numerator1 * denominator;
 		result = (new_numerator1 + new_numerator2) / common_denominator;
 	}
 
 	void MinusFraction() {
 		double common_denominator = denominator * denominator1;
-		int new_numerator1 = numerator * denominator1;
-		int new_numerator2 = numerator1 * denominator;
+		double new_numerator1 = numerator * denominator1;
+		double new_numerator2 = numerator1 * denominator;
 		result = (new_numerator1 - new_numerator2) / common_denominator;
 	}
 	void PrintResult() {
@@ -63,7 +73,7 @@ int main()
 {
 	Fraction fraction1;
 	fraction1.SetNumerator(3);
-	fraction1.SetDenominator(5);
+	fraction1.SetDenominator(0);
 	fraction1.SetNumerator1(4);
 	fraction1.SetDenominator2(3);
 
