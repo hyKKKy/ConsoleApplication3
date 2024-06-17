@@ -14,13 +14,23 @@ public:
 		numerator = value;
 	}
 	void SetDenominator(int value) {
-		denominator = value;
+		if(value == 0){
+			std::cout<<"Denominator can't be 0" << std::endl;
+		}
+		else{
+			denominator = value;
+		}
 	}
 	void SetNumerator1(int value) {
 		numerator1 = value;
 	}
 	void SetDenominator2(int value) {
-		denominator1 = value;
+		if(value == 0){
+			std::cout<<"Denominator can't be 0" << std::endl;
+		}
+		else{
+			denominator1 = value;
+		}
 	}
 	void SetUserOperator(char symbol) {
 		user_operator = symbol;
